@@ -1,6 +1,6 @@
 {
   "mongoConfig": {
-    "serverUrl": "mongodb://localhost:27017",
+    "serverUrl": "mongodb+srv://nirav:nirav@intouchcluster.la0zfdv.mongodb.net/?retryWrites=true&w=majority",
     "database": "CS554-inTouch"
   }
 }

@@ -7,7 +7,7 @@ async function main() {
   const db = await dbConnection();
   try {
     console.log("Starting seed!");
-    await db.dropDatabase();
+    // await db.dropDatabase();
     const JohnDoe = await seedFuncs.addUser(
       "John Doe",
       "johndoe1@stevens.edu",
