@@ -35,7 +35,7 @@ const httpLink = new HttpLink({
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: "ws://intouch-server-development.up.railway.app/subscriptions",
+    url: "wss://intouch-server-development.up.railway.app/subscriptions",
     // connectionParams: {
     //   authToken: token ? `${token}` : "",
     // },
