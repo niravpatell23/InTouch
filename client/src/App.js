@@ -35,7 +35,7 @@ const httpLink = new HttpLink({
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: "wss://in-touch-server.vercel.app/subscriptions",
+    url: "ws://in-touch-server.vercel.app/subscriptions",
     // connectionParams: {
     //   authToken: token ? `${token}` : "",
     // },
