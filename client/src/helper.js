@@ -1,6 +1,6 @@
 import AWS from "aws-sdk";
 import * as toxicity from "@tensorflow-models/toxicity";
-const S3_BUCKET = "intouch";
+const S3_BUCKET = "intouch-client";
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_AWS_ID,
   secretAccessKey: process.env.REACT_APP_AWS_SECRET,
