@@ -1,12 +1,6 @@
-# cs554a_inTouch
-
-## Our team
-
-Prithvi Punjabi, Nevil Ghelani, Samarth Kapuria, Nirav Patel
-
 ## About inTouch
 
-Stevens inTouch is an educational-cum-networking platform that allows students to stay in touch and talk about course content, upcoming deadlines and socialize.
+inTouch is an educational-cum-networking platform that allows students to stay in touch and talk about course content, upcoming deadlines and socialize.
 
 Our inspiration for this project stems from the pressing need for an all-in-one platform that allows students to have academic discussions, and blow off steam. Need to confirm an upcoming deadline? Head to inTouch, open up your course group chat, and ask away. Need to sublet a room? Head to inTouch, post a picture and a description, select the appropriate category for your post, and sit back and relax (till the calls roll in). Need to show all your friends the best meme ever? Head to inTouch!
 
@@ -61,7 +55,7 @@ If you have to add a feature, please fork the repo and create a pull request.
 5. Open a Pull Request
 
 **Note:** If you are **forking this repository**, you will have to create a .env file on the server, and add a variable named SECRET with any secret key for the JWT Token. You will also have to create a .env file on the client, with 2 variables, REACT_APP_AWS_ID and REACT_APP_AWS_SECRET, with your AWS keys.
-If you have the project zip file (Prof. Hill / TAs), the .env files will be in the respective project directories.
+
 
 ## Dummy users
 
