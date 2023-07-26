@@ -30,12 +30,14 @@ import Profile from "./components/Profile";
 import Channel2 from "./components/Channel2";
 //EF Temp//
 const httpLink = new HttpLink({
-  uri: "https://intouch-server-development.up.railway.app/graphql",
+  // uri: "https://intouch-server-development.up.railway.app/graphql",
+  uri: "http://localhost:4000/graphql",
 });
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: "wss://intouch-server-development.up.railway.app/subscriptions",
+    // url: "wss://intouch-server-development.up.railway.app/subscriptions",
+    url: "http://localhost:4000/subscriptions",
     // connectionParams: {
     //   authToken: token ? `${token}` : "",
     // },
