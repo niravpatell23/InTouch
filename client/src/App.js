@@ -31,13 +31,15 @@ import Channel2 from "./components/Channel2";
 //EF Temp//
 const httpLink = new HttpLink({
   // uri: "https://intouch-server-development.up.railway.app/graphql",
-  uri: "http://localhost:4000/graphql",
+  uri: "https://in-touch-server.vercel.app/graphql",
+  // uri: "http://localhost:4000/graphql",
 });
 
 const wsLink = new GraphQLWsLink(
   createClient({
     // url: "wss://intouch-server-development.up.railway.app/subscriptions",
-    url: "http://localhost:4000/subscriptions",
+    url: "https://in-touch-server.vercel.app/subscriptions",
+    // url: "http://localhost:4000/subscriptions",
     // connectionParams: {
     //   authToken: token ? `${token}` : "",
     // },
