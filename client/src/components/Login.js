@@ -37,16 +37,32 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function GuestLogin(e) {
-    setEmail("johndoe1@stevens.edu");
-    setPassword("John123!");
+  async function GuestLogin(e, credentials) {
+    e.preventDefault();
+    const { data } = await loginUser({ variables: credentials });
+    if (data.loginUser === null) {
+      throw new Error("Either username or password is invalid");
+    }
+    if (data.loginUser && data.loginUser !== null) {
+      dispatch(actions.storeToken(data.loginUser.token));
+      localStorage.setItem("token", data.loginUser.token);
+      localStorage.setItem("userId", data.loginUser.userId);
+      Swal.fire({
+        title: "Yay!",
+        text: "Successful Login",
+        icon: "success",
+      });
+      setEmail("");
+      setPassword("");
+      navigate("/main");
+    }
   }
 
-  async function PostData(e) {
+  async function PostData(e, direct) {
     e.preventDefault();
     console.log(email, password);
     try {
-      if (!email || email.trim() == "") {
+      if ((!email || email.trim() == "") && !direct?.email) {
         Swal.fire({
           title: "Error!",
           text: "Please enter email to login!",
@@ -56,7 +72,7 @@ const Login = () => {
         // setEmail("");
         return;
       }
-      if (!password || password == "") {
+      if ((!password || password == "") && !direct?.password) {
         Swal.fire({
           title: "Error!",
           text: "Please enter password to login!",
@@ -173,8 +189,10 @@ const Login = () => {
                         variant="contained"
                         color="primary"
                         onClick={(e) => {
-                          setEmail("johndoe1@stevens.edu");
-                          setPassword("John123!");
+                          GuestLogin(e, {
+                            email: "johndoe1@stevens.edu",
+                            password: "John123!",
+                          });
                         }}
                       >
                         Select
@@ -236,8 +254,10 @@ const Login = () => {
                         variant="contained"
                         color="primary"
                         onClick={(e) => {
-                          setEmail("janedoe778@stevens.edu");
-                          setPassword("Jane123!");
+                          GuestLogin(e, {
+                            email: "janedoe778@stevens.edu",
+                            password: "Jane123!",
+                          });
                         }}
                       >
                         Select
